@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Classifying Triangles</title>
 
 <style>
-
 body{
     font-family:'Segoe UI',sans-serif;
     margin:0;
@@ -22,20 +20,15 @@ header{
     padding:40px;
 }
 
-header h1{
-    margin:0;
-    font-size:2.5em;
-}
-
 .container{
-    max-width:1100px;
+    max-width:1000px;
     margin:auto;
     padding:25px;
 }
 
 .card{
     background:white;
-    border-radius:16px;
+    border-radius:15px;
     padding:25px;
     margin-bottom:25px;
     box-shadow:0 4px 12px rgba(0,0,0,.1);
@@ -45,36 +38,23 @@ h2{
     color:#0057b8;
 }
 
-.progress-container{
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:25px;
-    width:0%;
-    background:#28a745;
-    transition:.4s;
-}
-
 .flashcards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:20px;
 }
 
 .flashcard{
-    height:180px;
-    perspective:1000px;
+    height:160px;
     cursor:pointer;
+    perspective:1000px;
 }
 
 .flashcard-inner{
     position:relative;
     width:100%;
     height:100%;
-    transition:transform .7s;
+    transition:transform .6s;
     transform-style:preserve-3d;
 }
 
@@ -87,12 +67,12 @@ h2{
     position:absolute;
     width:100%;
     height:100%;
-    border-radius:15px;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:15px;
+    border-radius:12px;
+    padding:10px;
     box-sizing:border-box;
     backface-visibility:hidden;
 }
@@ -100,11 +80,10 @@ h2{
 .front{
     background:#dcecff;
     font-weight:bold;
-    font-size:1.2em;
 }
 
 .back{
-    background:#fff7d9;
+    background:#fff6d6;
     transform:rotateY(180deg);
 }
 
@@ -119,7 +98,7 @@ button{
     background:#0057b8;
     color:white;
     border:none;
-    padding:10px 18px;
+    padding:10px 16px;
     border-radius:8px;
     cursor:pointer;
 }
@@ -134,36 +113,44 @@ button:hover{
 }
 
 .incorrect{
-    color:#c62828;
+    color:red;
     font-weight:bold;
+}
+
+.progress{
+    width:100%;
+    height:22px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#28a745;
+    transition:.3s;
+}
+
+.badge{
+    display:none;
+    margin-top:15px;
+    background:#28a745;
+    color:white;
+    padding:10px;
+    border-radius:10px;
 }
 
 .challenge{
     background:#fff8dc;
-    border-left:8px solid #ff9800;
-}
-
-.warmup{
-    background:#eef6ff;
-    border-left:8px solid #0057b8;
-}
-
-.badge{
-    background:#28a745;
-    color:white;
-    padding:10px 15px;
-    border-radius:12px;
-    display:none;
-    margin-top:15px;
-    font-weight:bold;
+    border-left:6px solid orange;
 }
 
 footer{
     text-align:center;
-    padding:30px;
     color:#666;
+    padding:25px;
 }
-
 </style>
 
 </head>
@@ -177,45 +164,20 @@ footer{
 <div class="container">
 
 <div class="card">
-
 <h2>🎯 Learning Target</h2>
-
-<p>
-I can classify triangles by their sides and by their angles.
-</p>
-
-</div>
-
-<div class="card warmup">
-
-<h2>🤔 Which One Doesn't Belong?</h2>
-
-<p>
-An equilateral triangle, a right triangle, an obtuse triangle,
-and a scalene triangle are displayed.
-</p>
-
-<p>
-Choose one that doesn't belong and justify your answer.
-There is more than one correct solution!
-</p>
-
+<p>I can classify triangles by their sides and by their angles.</p>
 </div>
 
 <div class="card">
-
 <h2>🏆 Progress</h2>
 
-<div class="progress-container">
-<div class="progress-bar" id="progress"></div>
+<div class="progress">
+<div id="progressBar" class="progress-bar"></div>
 </div>
 
-<p>
-Score:
-<span id="score">0</span> / 4
-</p>
+<p>Score: <span id="score">0</span>/4</p>
 
-<div class="badge" id="badge">
+<div id="badge" class="badge">
 🎉 Triangle Expert Unlocked!
 </div>
 
@@ -225,46 +187,188 @@ Score:
 
 <h2>📚 Interactive Flashcards</h2>
 
-<p>Click each card to flip it.</p>
+<p>Click a card to flip it.</p>
 
 <div class="flashcards">
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Equilateral</div>
 <div class="back">3 congruent sides and 3 congruent angles</div>
 </div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Isosceles</div>
 <div class="back">At least 2 congruent sides</div>
 </div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Scalene</div>
 <div class="back">No congruent sides</div>
 </div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Acute</div>
 <div class="back">All angles are less than 90°</div>
 </div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Right</div>
-<div class="back">Contains exactly one 90° angle</div>
+<div class="back">Contains one 90° angle</div>
 </div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Obtuse</div>
-<div
+<div class="back">Contains one angle greater than 90°</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🧠 Practice Problems</h2>
+
+<div class="problem">
+<p>1. Triangle sides: 8, 8, 11</p>
+
+<select id="q1">
+<option></option>
+<option>Equilateral</option>
+<option>Isosceles</option>
+<option>Scalene</option>
+</select>
+
+<button onclick="checkAnswer('q1','Isosceles','r1')">Check</button>
+
+<div id="r1"></div>
+</div>
+
+<div class="problem">
+<p>2. Triangle angles: 30°, 60°, 90°</p>
+
+<select id="q2">
+<option></option>
+<option>Acute</option>
+<option>Right</option>
+<option>Obtuse</option>
+</select>
+
+<button onclick="checkAnswer('q2','Right','r2')">Check</button>
+
+<div id="r2"></div>
+</div>
+
+<div class="problem">
+<p>3. Triangle sides: 4, 5, 6</p>
+
+<select id="q3">
+<option></option>
+<option>Equilateral</option>
+<option>Isosceles</option>
+<option>Scalene</option>
+</select>
+
+<button onclick="checkAnswer('q3','Scalene','r3')">Check</button>
+
+<div id="r3"></div>
+</div>
+
+<div class="problem">
+<p>4. Triangle angles: 40°, 40°, 100°</p>
+
+<select id="q4">
+<option></option>
+<option>Acute</option>
+<option>Right</option>
+<option>Obtuse</option>
+</select>
+
+<button onclick="checkAnswer('q4','Obtuse','r4')">Check</button>
+
+<div id="r4"></div>
+</div>
+
+</div>
+
+<div class="card challenge">
+
+<h2>⭐ Challenge Question</h2>
+
+<p>
+Can a triangle be both isosceles and right?
+Explain your reasoning.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+Mrs. Pitstick's Geometry Resources
+</footer>
+
+<script>
+
+let score = 0;
+
+function updateProgress(){
+
+    let percent = (score/4)*100;
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+
+    if(score === 4){
+        document.getElementById("badge").style.display =
+            "block";
+    }
+}
+
+function checkAnswer(id, correct, resultId){
+
+    const answer =
+        document.getElementById(id).value;
+
+    const result =
+        document.getElementById(resultId);
+
+    if(answer === correct){
+
+        if(!result.dataset.correct){
+
+            score++;
+            result.dataset.correct = "yes";
+
+            document.getElementById("score").textContent =
+                score;
+
+            updateProgress();
+        }
+
+        result.innerHTML =
+            "<span class='correct'>✅ Correct!</span>";
+
+    } else {
+
+        result.innerHTML =
+            "<span class='incorrect'>❌ Try Again</span>";
+    }
+}
+
+</script>
+
+</body>
+</html>
