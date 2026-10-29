@@ -159,6 +159,12 @@ button:hover{
     font-weight:bold;
 }
 
+.hint{
+    margin-top:8px;
+    color:#7a5200;
+    font-style:italic;
+}
+
 .badge{
     display:none;
     margin-top:15px;
@@ -182,7 +188,6 @@ footer{
 
 </style>
 </head>
-
 <body>
 
 <header>
@@ -193,13 +198,8 @@ footer{
 <div class="container">
 
 <div class="card">
-
 <h2>🎯 Learning Target</h2>
-
-<p>
-I can classify triangles by their sides and by their angles.
-</p>
-
+<p>I can classify triangles by their sides and by their angles.</p>
 </div>
 
 <div class="card">
@@ -207,31 +207,28 @@ I can classify triangles by their sides and by their angles.
 <h2>📖 Lesson Notes</h2>
 
 <p>
-Triangles can be classified in two different ways:
-<strong>by their sides</strong> and
-<strong>by their angles</strong>.
+Triangles can be classified by their <strong>sides</strong> and by their <strong>angles</strong>.
+A triangle receives one classification from each category.
 </p>
 
-<h3>Classifying by Sides</h3>
+<h3>By Sides</h3>
 
 <ul>
-<li><strong>Equilateral:</strong> 3 congruent sides</li>
-<li><strong>Isosceles:</strong> At least 2 congruent sides</li>
-<li><strong>Scalene:</strong> No congruent sides</li>
+<li><strong>Equilateral</strong> → 3 congruent sides</li>
+<li><strong>Isosceles</strong> → at least 2 congruent sides</li>
+<li><strong>Scalene</strong> → no congruent sides</li>
 </ul>
 
-<h3>Classifying by Angles</h3>
+<h3>By Angles</h3>
 
 <ul>
-<li><strong>Acute:</strong> All angles are less than 90°</li>
-<li><strong>Right:</strong> One angle is exactly 90°</li>
-<li><strong>Obtuse:</strong> One angle is greater than 90°</li>
+<li><strong>Acute</strong> → all angles less than 90°</li>
+<li><strong>Right</strong> → one angle equals 90°</li>
+<li><strong>Obtuse</strong> → one angle greater than 90°</li>
 </ul>
 
 <p>
-A triangle can have one classification by sides and one classification by angles.
-For example, a triangle can be both <strong>isosceles</strong> and
-<strong>right</strong>.
+For example, a triangle can be both <strong>isosceles</strong> and <strong>right</strong>.
 </p>
 
 </div>
@@ -239,10 +236,6 @@ For example, a triangle can be both <strong>isosceles</strong> and
 <div class="card">
 
 <h2>🎥 Video Review & Extra Help</h2>
-
-<p>
-Need an extra explanation? Watch one or more of these videos before beginning the activity.
-</p>
 
 <a class="video-button"
 href="https://www.youtube.com/watch?v=L2Zrt4gqaHM"
@@ -259,7 +252,7 @@ target="_blank">
 <a class="video-button"
 href="https://www.youtube.com/results?search_query=classifying+triangles+practice"
 target="_blank">
-▶ Triangle Classification Practice Examples
+▶ Practice Examples
 </a>
 
 </div>
@@ -268,7 +261,7 @@ target="_blank">
 
 <h2>📚 Interactive Flashcards</h2>
 
-<p>Click each card to flip it.</p>
+<p>Click a card to flip it.</p>
 
 <div class="flashcards">
 
@@ -296,21 +289,21 @@ target="_blank">
 <div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Acute</div>
-<div class="back">All angles are less than 90°</div>
+<div class="back">All angles less than 90°</div>
 </div>
 </div>
 
 <div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Right</div>
-<div class="back">Contains one 90° angle</div>
+<div class="back">One angle equals 90°</div>
 </div>
 </div>
 
 <div class="flashcard" onclick="this.classList.toggle('flip')">
 <div class="flashcard-inner">
 <div class="front">Obtuse</div>
-<div class="back">Contains one angle greater than 90°</div>
+<div class="back">One angle greater than 90°</div>
 </div>
 </div>
 
@@ -342,77 +335,7 @@ target="_blank">
 
 <h2>🧠 Review Problems</h2>
 
-<!-- Questions 1-10 -->
-
-<div class="problem">
-<p>1. Side lengths: 8, 8, 11</p>
-<select id="q1"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
-<button onclick="checkAnswer('q1','Isosceles','r1')">Check</button>
-<div id="r1"></div>
-</div>
-
-<div class="problem">
-<p>2. Angles: 30°, 60°, 90°</p>
-<select id="q2"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
-<button onclick="checkAnswer('q2','Right','r2')">Check</button>
-<div id="r2"></div>
-</div>
-
-<div class="problem">
-<p>3. Side lengths: 4, 5, 6</p>
-<select id="q3"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
-<button onclick="checkAnswer('q3','Scalene','r3')">Check</button>
-<div id="r3"></div>
-</div>
-
-<div class="problem">
-<p>4. Angles: 40°, 40°, 100°</p>
-<select id="q4"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
-<button onclick="checkAnswer('q4','Obtuse','r4')">Check</button>
-<div id="r4"></div>
-</div>
-
-<div class="problem">
-<p>5. Side lengths: 10, 10, 10</p>
-<select id="q5"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
-<button onclick="checkAnswer('q5','Equilateral','r5')">Check</button>
-<div id="r5"></div>
-</div>
-
-<div class="problem">
-<p>6. Side lengths: 7, 9, 11</p>
-<select id="q6"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
-<button onclick="checkAnswer('q6','Scalene','r6')">Check</button>
-<div id="r6"></div>
-</div>
-
-<div class="problem">
-<p>7. Angles: 50°, 60°, 70°</p>
-<select id="q7"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
-<button onclick="checkAnswer('q7','Acute','r7')">Check</button>
-<div id="r7"></div>
-</div>
-
-<div class="problem">
-<p>8. Angles: 90°, 45°, 45°</p>
-<select id="q8"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
-<button onclick="checkAnswer('q8','Right','r8')">Check</button>
-<div id="r8"></div>
-</div>
-
-<div class="problem">
-<p>9. Angles: 110°, 30°, 40°</p>
-<select id="q9"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
-<button onclick="checkAnswer('q9','Obtuse','r9')">Check</button>
-<div id="r9"></div>
-</div>
-
-<div class="problem">
-<p>10. Side lengths: 12, 12, 15</p>
-<select id="q10"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
-<button onclick="checkAnswer('q10','Isosceles','r10')">Check</button>
-<div id="r10"></div>
-</div>
+<div id="questions"></div>
 
 </div>
 
@@ -421,8 +344,7 @@ target="_blank">
 <h2>⭐ Challenge Question</h2>
 
 <p>
-Can a triangle be both <strong>isosceles</strong> and <strong>right</strong>?
-Explain your reasoning.
+Can a triangle be both <strong>isosceles</strong> and <strong>right</strong>? Explain your reasoning.
 </p>
 
 </div>
@@ -437,36 +359,151 @@ Mrs. Pitstick's Geometry Resources
 
 let score = 0;
 
+const questions = [
+
+["q1","Side lengths: 8, 8, 11",["Equilateral","Isosceles","Scalene"],"Isosceles"],
+["q2","Angles: 30°, 60°, 90°",["Acute","Right","Obtuse"],"Right"],
+["q3","Side lengths: 4, 5, 6",["Equilateral","Isosceles","Scalene"],"Scalene"],
+["q4","Angles: 40°, 40°, 100°",["Acute","Right","Obtuse"],"Obtuse"],
+["q5","Side lengths: 10, 10, 10",["Equilateral","Isosceles","Scalene"],"Equilateral"],
+["q6","Side lengths: 7, 9, 11",["Equilateral","Isosceles","Scalene"],"Scalene"],
+["q7","Angles: 50°, 60°, 70°",["Acute","Right","Obtuse"],"Acute"],
+["q8","Angles: 90°, 45°, 45°",["Acute","Right","Obtuse"],"Right"],
+["q9","Angles: 110°, 30°, 40°",["Acute","Right","Obtuse"],"Obtuse"],
+["q10","Side lengths: 12, 12, 15",["Equilateral","Isosceles","Scalene"],"Isosceles"]
+
+];
+
+const hints = {
+
+q1:"How many sides are congruent?",
+q2:"Look for a 90° angle.",
+q3:"Compare all three side lengths.",
+q4:"Find the largest angle.",
+q5:"Are all three sides equal?",
+q6:"Do any side lengths repeat?",
+q7:"Are all angles less than 90°?",
+q8:"Which classification contains a 90° angle?",
+q9:"One angle is greater than 90°.",
+q10:"How many sides are congruent?"
+
+};
+
+const explanations = {
+
+q1:"Two side lengths are equal, so the triangle is isosceles.",
+q2:"A triangle containing a 90° angle is a right triangle.",
+q3:"All side lengths are different, making it scalene.",
+q4:"100° is greater than 90°, so the triangle is obtuse.",
+q5:"All three sides are congruent, so it is equilateral.",
+q6:"All side lengths are different, so it is scalene.",
+q7:"All angles are less than 90°, so it is acute.",
+q8:"Any triangle with a 90° angle is right.",
+q9:"110° is greater than 90°, making it obtuse.",
+q10:"Two side lengths are equal, making it isosceles."
+
+};
+
+const attempts = {};
+
+const container = document.getElementById("questions");
+
+questions.forEach((q,index)=>{
+
+container.innerHTML += `
+<div class="problem">
+<p>${index+1}. ${q[1]}</p>
+
+<select id="${q[0]}">
+<option></option>
+${q[2].map(x=>`<option>${x}</option>`).join("")}
+</select>
+
+<button onclick="checkAnswer('${q[0]}','${q[3]}','r${index+1}','h${index+1}')">
+Check
+</button>
+
+<div id="r${index+1}"></div>
+<div id="h${index+1}" class="hint"></div>
+
+</div>
+`;
+
+});
+
 function updateProgress(){
 
-    let percent = (score/10)*100;
+let percent=(score/10)*100;
 
-    document.getElementById("progressBar").style.width =
-        percent + "%";
+document.getElementById("progressBar").style.width=percent+"%";
 
-    if(score === 10){
-        document.getElementById("badge").style.display = "block";
-    }
+if(score===10){
+document.getElementById("badge").style.display="block";
 }
 
-function checkAnswer(id, correct, resultId){
+}
 
-    const answer = document.getElementById(id).value;
-    const result = document.getElementById(resultId);
+function checkAnswer(id,correct,resultId,hintId){
 
-    if(answer === correct){
+const answer=document.getElementById(id).value;
+const result=document.getElementById(resultId);
+const hint=document.getElementById(hintId);
 
-        if(!result.dataset.correct){
+if(answer===correct){
 
-            score++;
-            result.dataset.correct = "yes";
+if(!result.dataset.correct){
 
-            document.getElementById("score").textContent = score;
+score++;
+result.dataset.correct="yes";
 
-            updateProgress();
-        }
+document.getElementById("score").textContent=score;
 
-        result.innerHTML =
-            "<span class='correct'>✅ Correct!</span>";
+updateProgress();
+}
 
-    } else {
+result.innerHTML="<span class='correct'>✅ Correct!</span>";
+hint.innerHTML="";
+return;
+}
+
+attempts[id]=(attempts[id]||0)+1;
+
+if(attempts[id]===1){
+
+result.innerHTML="<span class='incorrect'>❌ Not quite.</span>";
+hint.innerHTML="<strong>Hint:</strong> "+hints[id];
+
+}else{
+
+result.innerHTML="<span class='incorrect'>❌ Not quite.</span>";
+hint.innerHTML="<strong>Explanation:</strong> "+explanations[id];
+
+}
+
+}
+
+function resetProgress(){
+
+score=0;
+
+document.getElementById("score").textContent="0";
+document.getElementById("progressBar").style.width="0%";
+document.getElementById("badge").style.display="none";
+
+Object.keys(attempts).forEach(key=>attempts[key]=0);
+
+for(let i=1;i<=10;i++){
+
+document.getElementById("r"+i).innerHTML="";
+document.getElementById("h"+i).innerHTML="";
+
+delete document.getElementById("r"+i).dataset.correct;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
