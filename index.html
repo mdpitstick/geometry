@@ -1,16 +1,249 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Mrs. Pitstick's Geometry Lessons</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mrs. Pitstick's Geometry Course</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#eef3fa;
+    color:#222;
+}
+
+header{
+    background:linear-gradient(135deg,#0057b8,#3f87ff);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:3em;
+}
+
+header p{
+    font-size:1.2em;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.unit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.unit-card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.unit-card:hover{
+    transform:translateY(-5px);
+}
+
+.unit-card h2{
+    margin-top:0;
+    color:#0057b8;
+}
+
+.lesson-link{
+    display:block;
+    background:#0057b8;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:8px;
+    margin:10px 0;
+    transition:.3s;
+}
+
+.lesson-link:hover{
+    background:#003f88;
+}
+
+.coming-soon{
+    display:block;
+    background:#cccccc;
+    color:#666;
+    padding:12px;
+    border-radius:8px;
+    margin:10px 0;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+.quote{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:30px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Hello Geometry Students!</h1>
-    <p>If you can see this, GitHub Pages is working.</p>
-    <ul>
-        <li>
-            <a href="classifyingtriangles.html">
-                Classifying Triangles
-            </a>
-        </li>
-    </ul>
+
+<header>
+<h1>📐 Mrs. Pitstick's Geometry Course</h1>
+<p>Interactive Lessons • Practice • Review • Challenge Activities</p>
+</header>
+
+<div class="container">
+
+<div class="quote">
+<h3>Mathematical Thinking</h3>
+<p>
+"Don't just get the answer. Convince yourself why it must be true."
+</p>
+</div>
+
+<div class="unit-grid">
+
+<div class="unit-card">
+
+<h2>🔺 Unit 1: Triangles</h2>
+
+<a class="lesson-link" href="classifyingtriangles.html">
+Classifying Triangles
+</a>
+
+<a class="coming-soon">
+Triangle Congruence
+</a>
+
+<a class="coming-soon">
+Triangle Inequality
+</a>
+
+<a class="coming-soon">
+Special Right Triangles
+</a>
+
+</div>
+
+<div class="unit-card">
+
+<h2>∥ Unit 2: Parallel Lines</h2>
+
+<a class="coming-soon">
+Angle Relationships
+</a>
+
+<a class="coming-soon">
+Proving Lines Parallel
+</a>
+
+<a class="coming-soon">
+Transversals
+</a>
+
+</div>
+
+<div class="unit-card">
+
+<h2>📏 Unit 3: Transformations</h2>
+
+<a class="coming-soon">
+Translations
+</a>
+
+<a class="coming-soon">
+Reflections
+</a>
+
+<a class="coming-soon">
+Rotations
+</a>
+
+<a class="coming-soon">
+Dilations
+</a>
+
+</div>
+
+<div class="unit-card">
+
+<h2>⭕ Unit 4: Circles</h2>
+
+<a class="coming-soon">
+Parts of a Circle
+</a>
+
+<a class="coming-soon">
+Arcs & Chords
+</a>
+
+<a class="coming-soon">
+Circle Theorems
+</a>
+
+</div>
+
+<div class="unit-card">
+
+<h2>🎯 ACT/SAT Geometry Review</h2>
+
+<a class="coming-soon">
+Practice Set 1
+</a>
+
+<a class="coming-soon">
+Practice Set 2
+</a>
+
+<a class="coming-soon">
+Formula Review
+</a>
+
+</div>
+
+<div class="unit-card">
+
+<h2>🏆 Challenge Problems</h2>
+
+<a class="coming-soon">
+Weekly Challenge
+</a>
+
+<a class="coming-soon">
+BTC Tasks
+</a>
+
+<a class="coming-soon">
+Contest Problems
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© Mrs. Pitstick's Geometry Resources
+</footer>
+
 </body>
 </html>
