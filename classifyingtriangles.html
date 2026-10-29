@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Classifying Triangles</title>
 
 <style>
+
 body{
     font-family:'Segoe UI',sans-serif;
     margin:0;
@@ -40,8 +42,14 @@ h2{
 
 .flashcards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
+}
+
+@media(max-width:700px){
+    .flashcards{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
 .flashcard{
@@ -80,11 +88,45 @@ h2{
 .front{
     background:#dcecff;
     font-weight:bold;
+    font-size:1.1em;
 }
 
 .back{
     background:#fff6d6;
     transform:rotateY(180deg);
+}
+
+.video-button{
+    display:block;
+    background:#e8f0ff;
+    color:#0057b8;
+    text-decoration:none;
+    padding:15px 18px;
+    margin:12px 0;
+    border-radius:10px;
+    font-weight:600;
+    border-left:6px solid #0057b8;
+    transition:.2s;
+}
+
+.video-button:hover{
+    background:#d6e8ff;
+    transform:translateX(4px);
+}
+
+.progress{
+    width:100%;
+    height:24px;
+    background:#ddd;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#28a745;
+    transition:.4s;
 }
 
 .problem{
@@ -117,28 +159,14 @@ button:hover{
     font-weight:bold;
 }
 
-.progress{
-    width:100%;
-    height:22px;
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    width:0%;
-    height:100%;
-    background:#28a745;
-    transition:.3s;
-}
-
 .badge{
     display:none;
     margin-top:15px;
     background:#28a745;
     color:white;
-    padding:10px;
+    padding:12px;
     border-radius:10px;
+    font-weight:bold;
 }
 
 .challenge{
@@ -148,38 +176,91 @@ button:hover{
 
 footer{
     text-align:center;
-    color:#666;
     padding:25px;
+    color:#666;
 }
-</style>
 
+</style>
 </head>
+
 <body>
 
 <header>
 <h1>🔺 Classifying Triangles</h1>
-<p>Geometry Unit 1</p>
+<p>Geometry Unit: Triangles</p>
 </header>
 
 <div class="container">
 
 <div class="card">
+
 <h2>🎯 Learning Target</h2>
-<p>I can classify triangles by their sides and by their angles.</p>
+
+<p>
+I can classify triangles by their sides and by their angles.
+</p>
+
 </div>
 
 <div class="card">
-<h2>🏆 Progress</h2>
 
-<div class="progress">
-<div id="progressBar" class="progress-bar"></div>
+<h2>📖 Lesson Notes</h2>
+
+<p>
+Triangles can be classified in two different ways:
+<strong>by their sides</strong> and
+<strong>by their angles</strong>.
+</p>
+
+<h3>Classifying by Sides</h3>
+
+<ul>
+<li><strong>Equilateral:</strong> 3 congruent sides</li>
+<li><strong>Isosceles:</strong> At least 2 congruent sides</li>
+<li><strong>Scalene:</strong> No congruent sides</li>
+</ul>
+
+<h3>Classifying by Angles</h3>
+
+<ul>
+<li><strong>Acute:</strong> All angles are less than 90°</li>
+<li><strong>Right:</strong> One angle is exactly 90°</li>
+<li><strong>Obtuse:</strong> One angle is greater than 90°</li>
+</ul>
+
+<p>
+A triangle can have one classification by sides and one classification by angles.
+For example, a triangle can be both <strong>isosceles</strong> and
+<strong>right</strong>.
+</p>
+
 </div>
 
-<p>Score: <span id="score">0</span>/4</p>
+<div class="card">
 
-<div id="badge" class="badge">
-🎉 Triangle Expert Unlocked!
-</div>
+<h2>🎥 Video Review & Extra Help</h2>
+
+<p>
+Need an extra explanation? Watch one or more of these videos before beginning the activity.
+</p>
+
+<a class="video-button"
+href="https://www.youtube.com/watch?v=L2Zrt4gqaHM"
+target="_blank">
+▶ Math Antics: Triangles
+</a>
+
+<a class="video-button"
+href="https://www.youtube.com/results?search_query=khan+academy+classifying+triangles"
+target="_blank">
+▶ Khan Academy: Classifying Triangles
+</a>
+
+<a class="video-button"
+href="https://www.youtube.com/results?search_query=classifying+triangles+practice"
+target="_blank">
+▶ Triangle Classification Practice Examples
+</a>
 
 </div>
 
@@ -187,7 +268,7 @@ footer{
 
 <h2>📚 Interactive Flashcards</h2>
 
-<p>Click a card to flip it.</p>
+<p>Click each card to flip it.</p>
 
 <div class="flashcards">
 
@@ -239,66 +320,94 @@ footer{
 
 <div class="card">
 
-<h2>🧠 Practice Problems</h2>
+<h2>🏆 Progress</h2>
+
+<div class="progress">
+<div id="progressBar" class="progress-bar"></div>
+</div>
+
+<p>Score: <span id="score">0</span>/10</p>
+
+<div id="badge" class="badge">
+🏆 Triangle Classification Master!
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🧠 Review Problems</h2>
+
+<!-- Questions 1-10 -->
 
 <div class="problem">
-<p>1. Triangle sides: 8, 8, 11</p>
-
-<select id="q1">
-<option></option>
-<option>Equilateral</option>
-<option>Isosceles</option>
-<option>Scalene</option>
-</select>
-
+<p>1. Side lengths: 8, 8, 11</p>
+<select id="q1"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
 <button onclick="checkAnswer('q1','Isosceles','r1')">Check</button>
-
 <div id="r1"></div>
 </div>
 
 <div class="problem">
-<p>2. Triangle angles: 30°, 60°, 90°</p>
-
-<select id="q2">
-<option></option>
-<option>Acute</option>
-<option>Right</option>
-<option>Obtuse</option>
-</select>
-
+<p>2. Angles: 30°, 60°, 90°</p>
+<select id="q2"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
 <button onclick="checkAnswer('q2','Right','r2')">Check</button>
-
 <div id="r2"></div>
 </div>
 
 <div class="problem">
-<p>3. Triangle sides: 4, 5, 6</p>
-
-<select id="q3">
-<option></option>
-<option>Equilateral</option>
-<option>Isosceles</option>
-<option>Scalene</option>
-</select>
-
+<p>3. Side lengths: 4, 5, 6</p>
+<select id="q3"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
 <button onclick="checkAnswer('q3','Scalene','r3')">Check</button>
-
 <div id="r3"></div>
 </div>
 
 <div class="problem">
-<p>4. Triangle angles: 40°, 40°, 100°</p>
-
-<select id="q4">
-<option></option>
-<option>Acute</option>
-<option>Right</option>
-<option>Obtuse</option>
-</select>
-
+<p>4. Angles: 40°, 40°, 100°</p>
+<select id="q4"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
 <button onclick="checkAnswer('q4','Obtuse','r4')">Check</button>
-
 <div id="r4"></div>
+</div>
+
+<div class="problem">
+<p>5. Side lengths: 10, 10, 10</p>
+<select id="q5"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
+<button onclick="checkAnswer('q5','Equilateral','r5')">Check</button>
+<div id="r5"></div>
+</div>
+
+<div class="problem">
+<p>6. Side lengths: 7, 9, 11</p>
+<select id="q6"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
+<button onclick="checkAnswer('q6','Scalene','r6')">Check</button>
+<div id="r6"></div>
+</div>
+
+<div class="problem">
+<p>7. Angles: 50°, 60°, 70°</p>
+<select id="q7"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
+<button onclick="checkAnswer('q7','Acute','r7')">Check</button>
+<div id="r7"></div>
+</div>
+
+<div class="problem">
+<p>8. Angles: 90°, 45°, 45°</p>
+<select id="q8"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
+<button onclick="checkAnswer('q8','Right','r8')">Check</button>
+<div id="r8"></div>
+</div>
+
+<div class="problem">
+<p>9. Angles: 110°, 30°, 40°</p>
+<select id="q9"><option></option><option>Acute</option><option>Right</option><option>Obtuse</option></select>
+<button onclick="checkAnswer('q9','Obtuse','r9')">Check</button>
+<div id="r9"></div>
+</div>
+
+<div class="problem">
+<p>10. Side lengths: 12, 12, 15</p>
+<select id="q10"><option></option><option>Equilateral</option><option>Isosceles</option><option>Scalene</option></select>
+<button onclick="checkAnswer('q10','Isosceles','r10')">Check</button>
+<div id="r10"></div>
 </div>
 
 </div>
@@ -308,7 +417,7 @@ footer{
 <h2>⭐ Challenge Question</h2>
 
 <p>
-Can a triangle be both isosceles and right?
+Can a triangle be both <strong>isosceles</strong> and <strong>right</strong>?
 Explain your reasoning.
 </p>
 
@@ -326,24 +435,20 @@ let score = 0;
 
 function updateProgress(){
 
-    let percent = (score/4)*100;
+    let percent = (score/10)*100;
 
     document.getElementById("progressBar").style.width =
         percent + "%";
 
-    if(score === 4){
-        document.getElementById("badge").style.display =
-            "block";
+    if(score === 10){
+        document.getElementById("badge").style.display = "block";
     }
 }
 
 function checkAnswer(id, correct, resultId){
 
-    const answer =
-        document.getElementById(id).value;
-
-    const result =
-        document.getElementById(resultId);
+    const answer = document.getElementById(id).value;
+    const result = document.getElementById(resultId);
 
     if(answer === correct){
 
@@ -352,8 +457,7 @@ function checkAnswer(id, correct, resultId){
             score++;
             result.dataset.correct = "yes";
 
-            document.getElementById("score").textContent =
-                score;
+            document.getElementById("score").textContent = score;
 
             updateProgress();
         }
@@ -362,13 +466,3 @@ function checkAnswer(id, correct, resultId){
             "<span class='correct'>✅ Correct!</span>";
 
     } else {
-
-        result.innerHTML =
-            "<span class='incorrect'>❌ Try Again</span>";
-    }
-}
-
-</script>
-
-</body>
-</html>
