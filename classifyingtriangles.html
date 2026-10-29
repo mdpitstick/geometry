@@ -1,13 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Classifying Triangles</title>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classifying Triangles</title>
 
-<h1>Classifying Triangles</h1>
+<style>
 
-<p>If you can see this page, the lesson file is working.</p>
+body{
+    font-family:Segoe UI,Arial,sans-serif;
+    margin:0;
+    background:#f4f7fb;
+    color:#222;
+}
 
-</body>
-</html>
+header{
+    background:linear-gradient(135deg,#0057b8,#3f87ff);
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    margin:20px 0;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.score{
+    font-size:1.2em;
+    color:#0057b8;
+    font-weight:bold;
+}
+
+.flashcards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.flashcard{
+    height:140px;
+    cursor:pointer;
+    perspective:1000px;
+}
+
+.inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .6s;
+    transform-style:preserve-3d;
+}
+
+.flashcard.flip .inner{
+    transform:rotateY(180deg);
+}
+
+.front,.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    border-radius:12px;
+    padding:10px;
+    box-sizing:border-box;
+    backface-visibility:hidden;
+}
+
+.front{
+    background:#d7e8ff;
+    font-weight:bold;
+}
+
+.back{
+    background:#fff6cc;
+    transform:rotateY(180deg);
+}
+
+.problem{
+    background:#f7f7f7;
+    padding:15px;
+    border-radius:10px;
+    margin-
