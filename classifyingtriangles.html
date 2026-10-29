@@ -3,94 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Classifying Triangles</title>
 
 <style>
-
 body{
-    font-family:Segoe UI,Arial,sans-serif;
-    margin:0;
-    background:#f4f7fb;
-    color:#222;
-}
-
-header{
-    background:linear-gradient(135deg,#0057b8,#3f87ff);
-    color:white;
-    text-align:center;
-    padding:35px;
-}
-
-.container{
-    max-width:1100px;
+    font-family:Arial,sans-serif;
+    max-width:900px;
     margin:auto;
     padding:20px;
+    background:#f4f7fb;
 }
 
 .card{
     background:white;
-    border-radius:15px;
     padding:20px;
+    border-radius:10px;
     margin:20px 0;
-    box-shadow:0 3px 10px rgba(0,0,0,.1);
-}
-
-.score{
-    font-size:1.2em;
-    color:#0057b8;
-    font-weight:bold;
-}
-
-.flashcards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
 .flashcard{
-    height:140px;
-    cursor:pointer;
-    perspective:1000px;
-}
-
-.inner{
-    position:relative;
-    width:100%;
-    height:100%;
-    transition:transform .6s;
-    transform-style:preserve-3d;
-}
-
-.flashcard.flip .inner{
-    transform:rotateY(180deg);
-}
-
-.front,.back{
-    position:absolute;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    border-radius:12px;
-    padding:10px;
-    box-sizing:border-box;
-    backface-visibility:hidden;
-}
-
-.front{
     background:#d7e8ff;
+    padding:20px;
+    cursor:pointer;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.correct{
+    color:green;
     font-weight:bold;
 }
+</style>
 
-.back{
-    background:#fff6cc;
-    transform:rotateY(180deg);
+</head>
+<body>
+
+<h1>🔺 Classifying Triangles</h1>
+
+<div class="card">
+<h2>Learning Target</h2>
+<p>I can classify triangles by sides and angles.</p>
+</div>
+
+<div class="card">
+<h2>Flashcard</h2>
+
+<div class="flashcard" onclick="flipCard()">
+<span id="cardText">Equilateral</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Practice Question</h2>
+
+<p>
+A triangle has side lengths 8, 8, and 11.
+</p>
+
+<select id="answer">
+<option></option>
+<option>Equilateral</option>
+<option>Isosceles</option>
+<option>Scalene</option>
+</select>
+
+<button onclick="checkAnswer()">Check</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+let flipped=false;
+
+function flipCard(){
+
+const card=document.getElementById("cardText");
+
+if(!flipped){
+card.innerHTML="3 congruent sides";
+flipped=true;
+}
+else{
+card.innerHTML="Equilateral";
+flipped=false;
 }
 
-.problem{
-    background:#f7f7f7;
-    padding:15px;
-    border-radius:10px;
-    margin-
+}
+
+function checkAnswer(){
+
+const answer=
+document.getElementById("answer").value;
+
+if(answer==="Isosceles"){
+document.getElementById("result").innerHTML=
+"<span class='correct'>✅ Correct!</span>";
+}
+else{
+document.getElementById("result").innerHTML=
+"❌ Try Again";
+}
+
+}
+
+</script>
+
+</body>
+</html>
