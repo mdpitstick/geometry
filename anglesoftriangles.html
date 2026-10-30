@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometry 4.2 - Angles of Triangles</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#eef5ff;
+color:#222;
+line-height:1.6;
+}
+
+header{
+background:#0057b8;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+margin-bottom:10px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#0057b8;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-top:15px;
+color:#00408a;
+}
+
+.video-btn{
+display:inline-block;
+padding:12px 20px;
+margin:8px;
+background:#0057b8;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.video-btn:hover{
+background:#003f87;
+}
+
+.progress-container{
+background:#ddd;
+height:28px;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:15px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:#28a745;
+transition:.4s;
+color:white;
+text-align:center;
+font-weight:bold;
+line-height:28px;
+}
+
+.flashcards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.flashcard{
+height:170px;
+perspective:1000px;
+cursor:pointer;
+}
+
+.flashcard-inner{
+position:relative;
+width:100%;
+height:100%;
+text-align:center;
+transition:transform .8s;
+transform-style:preserve-3d;
+}
+
+.flashcard.flip .flashcard-inner{
+transform:rotateY(180deg);
+}
+
+.front,
+.back{
+position:absolute;
+height:100%;
+width:100%;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:15px;
+backface-visibility:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.front{
+background:#0057b8;
+color:white;
+font-weight:bold;
+}
+
+.back{
+background:white;
+color:#222;
+transform:rotateY(180deg);
+}
+
+.question{
+margin-bottom:25px;
+padding:20px;
+background:#f8fbff;
+border-left:5px solid #0057b8;
+border-radius:10px;
+}
+
+.question button{
+display:block;
+width:100%;
+margin:8px 0;
+padding:10px;
+border:none;
+background:#dfeaff;
+border-radius:8px;
+cursor:pointer;
+}
+
+.question button:hover{
+background:#c8dcff;
+}
+
+.feedback{
+margin-top:10px;
+font-weight:bold;
+}
+
+.hint{
+margin-top:8px;
+color:#0057b8;
+font-style:italic;
+}
+
+.explanation{
+margin-top:8px;
+color:#333;
+}
+
+.badge{
+display:none;
+text-align:center;
+padding:20px;
+font-size:1.3rem;
+font-weight:bold;
+background:#d4edda;
+color:#155724;
+border-radius:15px;
+margin-top:20px;
+}
+
+.reset-btn{
+background:#dc3545;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.reset-btn:hover{
+background:#b02a37;
+}
+
+.challenge{
+background:#fff9d6;
+border-left:6px solid gold;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+}
+
+ul{
+margin-left:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔺 Geometry 4.2: Angles of Triangles</h1>
+<p>Triangle Angle Sum Theorem & Exterior Angle Theorem</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>🎯 Learning Target</h2>
+
+<p>
+I can use the Triangle Angle Sum Theorem and the Exterior Angle
+Theorem to find missing angle measures in triangles.
+</p>
+</div>
+
+<div class="card">
+
+<h2>📖 Lesson Notes</h2>
+
+<p>
+Triangles have special angle relationships that help us solve
+for missing angle measures.
+</p>
+
+<h3>🔺 Triangle Angle Sum Theorem</h3>
+
+<p>
+The sum of the measures of the interior angles of any triangle
+is always 180°.
+</p>
+
+<h2 style="text-align:center;color:#0057b8;">
+m∠A + m∠B + m∠C = 180°
+</h2>
+
+<p>
+To find a missing interior angle, subtract the known angles from 180°.
+</p>
+
+<p>
+<b>Example:</b><br>
+55° + 70° + x = 180°<br>
+125° + x = 180°<br>
+x = 55°
+</p>
+
+<hr style="margin:20px 0;">
+
+<h3>➡️ Exterior Angle Theorem</h3>
+
+<p>
+An exterior angle is created when one side of a triangle is extended.
+</p>
+
+<p>
+The measure of an exterior angle equals the sum of the two remote
+interior angles.
+</p>
+
+<h2 style="text-align:center;color:#0057b8;">
+Exterior Angle = Remote Interior Angle + Remote Interior Angle
+</h2>
+
+<p>
+<b>Example:</b><br>
+50° + 65° = 115°
+</p>
+
+<hr style="margin:20px 0;">
+
+<h3>💡 Quick Tips</h3>
+
+<ul>
+<li>Interior angles always add to 180°.</li>
+<li>Exterior angles use addition of remote interior angles.</li>
+<li>Look carefully for interior versus exterior angles.</li>
+<li>Draw extra marks or labels if the diagram looks confusing.</li>
+<li>Always check that your answer makes sense.</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🎥 Video Review</h2>
+
+<a class="video-btn"
+href="https://www.youtube.com/results?search_query=triangle+angle+sum+theorem"
+target="_blank">
+▶ Triangle Angle Sum Theorem
+</a>
+
+<a class="video-btn"
+href="https://www.youtube.com/results?search_query=exterior+angle+theorem"
+target="_blank">
+▶ Exterior Angle Theorem
+</a>
+
+<a class="video-btn"
+href="https://www.youtube.com/results?search_query=angles+of+triangles+practice"
+target="_blank">
+▶ Practice Problems
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>🧠 Flashcards</h2>
+
+<div class="flashcards">
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Triangle Angle Sum Theorem</div>
+<div class="back">Interior angles of a triangle add to 180°.</div>
+</div>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Exterior Angle</div>
+<div class="back">Formed when a side of a triangle is extended.</div>
+</div>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Exterior Angle Theorem</div>
+<div class="back">Exterior Angle = Sum of the two remote interior angles.</div>
+</div>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Missing Interior Angle</div>
+<div class="back">180° − known angles.</div>
+</div>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Remote Interior Angles</div>
+<div class="back">The two interior angles not touching the exterior angle.</div>
+</div>
+</div>
+
+<div class="flashcard" onclick="this.classList.toggle('flip')">
+<div class="flashcard-inner">
+<div class="front">Always Remember</div>
+<div class="back">Every triangle has angle measures that total 180°.</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+
+<h2>📊 Progress Tracker</h2>
+
+<div class="progress-container">
+<div class="progress-bar" id="progressBar">0%</div>
+</div>
+
+<button class="reset-btn" onclick="resetProgress()">
+Reset Progress
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>✏️ Practice Problems</h2>
+
+<div id="questions"></div>
+
+<div id="badge" class="badge">
+🏆 Geometry Expert! You completed all 10 problems!
+</div>
+
+</div>
+
+<div class="card challenge">
+
+<h2>⭐ Challenge Problem</h2>
+
+<p>
+One angle of a triangle measures 3x°,
+another measures 5x°,
+and the third measures 7x°.
+</p>
+
+<p>
+Find x and all three angle measures.
+</p>
+
+<details>
+<summary><b>Show Answer</b></summary>
+
+<p>
+3x + 5x + 7x = 180<br>
+15x = 180<br>
+x = 12
+</p>
+
+<p>
+Angles: 36°, 60°, 84°
+</p>
+
+</details>
+
+</div>
+
+</div>
+
+<footer>
+Mrs. Pitstick Geometry • Chapter 4.2 Angles of Triangles
+</footer>
+
+<script>
+
+const questions = [
+
+{
+q:"A triangle has angles 60° and 70°. Find the third angle.",
+choices:["40°","50°","60°"],
+a:"50°",
+hint:"All interior angles total 180°.",
+exp:"180 − 60 − 70 = 50°"
+},
+
+{
+q:"A triangle has angles 35° and 85°. Find the third angle.",
+choices:["50°","60°","70°"],
+a:"60°",
+hint:"Subtract the known angles from 180°.",
+exp:"180 − 35 − 85 = 60°"
+},
+
+{
+q:"Remote interior angles are 40° and 55°.",
+choices:["95°","105°","115°"],
+a:"95°",
+hint:"Add the remote interior angles.",
+exp:"40 + 55 = 95°"
+},
+
+{
+q:"Remote interior angles are 62° and 41°.",
+choices:["103°","113°","123°"],
+a:"103°",
+hint:"Use the Exterior Angle Theorem.",
+exp:"62 + 41 = 103°"
+},
+
+{
+q:"Triangle angles are 90° and 35°. Third angle?",
+choices:["45°","55°","65°"],
+a:"55°",
+hint:"Angles add to 180°.",
+exp:"180 − 90 − 35 = 55°"
+},
+
+{
+q:"Triangle angles are 72° and 58°. Third angle?",
+choices:["40°","50°","60°"],
+a:"50°",
+hint:"Subtract from 180°.",
+exp:"180 − 72 − 58 = 50°"
+},
+
+{
+5°"
+},
+
+{
+q:"Triangle angles are 44° and 81°. Third angle?",
+choices:["45°","55°","65°"],
+a:"55°",
+hint:"Interior angles total 180°.",
+exp:"180 − 44 − 81 = 55°"
+},
+
+{
+q:"Remote interior angles are 39° and 87°.",
+choices:["116°","126°","136°"],
+a:"126°",
+hint:"Use the Exterior Angle Theorem.",
+exp:"39 + 87 = 126°"
+},
+
+{
+q:"Triangle angles are 48° and 61°. Third angle?",
+choices:["61°","71°","81°"],
+a:"71°",
+hint:"Subtract from 180°.",
+exp:"180 − 48 − 61 = 71°"
+}
+
+];
+
+let score=0;
+
+function renderQuestions(){
+
+const container=document.getElementById("questions");
+
+questions.forEach((item,index)=>{
+
+let html=`
+<div class="question">
+<p><strong>${index+1}. ${item.q}</strong></p>
+`;
+
+item.choices.forEach(choice=>{
+html+=`
+<button onclick="checkAnswer(this,
+'${choice}',
+'${item.a}',
+'${item.hint}',
+'${item.exp}')">
+${choice}
+</button>
+`;
+});
+
+html+=`
+<div class="feedback"></div>
+</div>
+`;
+
+container.innerHTML+=html;
+
+});
+
+}
+
+function checkAnswer(btn,choice,answer,hint,exp){
+
+const feedback=btn.parentElement.querySelector(".feedback");
+
+if(feedback.innerHTML!==""){
+return;
+}
+
+if(choice===answer){
+
+feedback.innerHTML=
+`✅ Correct!`;
+
+feedback.style.color="green";
+
+score++;
+
+updateProgress();
+
+}else{
+
+feedback.innerHTML=
+`
+❌ Incorrect
+<div class="hint"><b>Hint:</b> ${hint}</div>
+<div class="explanation"><b>Explanation:</b> ${exp}</div>
+`;
+
+feedback.style.color="red";
+
+}
+
+}
+
+function updateProgress(){
+
+const percent=Math.round((score/10)*100);
+
+const bar=document.getElementById("progressBar");
+
+bar.style.width=percent+"%";
+bar.textContent=percent+"%";
+
+if(score===10){
+document.getElementById("badge").style.display="block";
+}
+
+}
+
+function resetProgress(){
+location.reload();
+}
+
+renderQuestions();
+
+</script>
+
+</body>
+</html>
